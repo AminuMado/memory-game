@@ -1,5 +1,15 @@
 import React from "react";
-function App() {
-  return <h1>WE IN</h1>;
+import Header from "./components/Header/Header";
+import Footer from "./components/Footer/Footer";
+class App extends React.Component {
+  render() {
+    return (
+      <>
+        <Header />
+        {/* <Main /> */}
+        <Footer />
+      </>
+    );
+  }
 }
 export default App;
