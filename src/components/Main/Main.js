@@ -10,6 +10,7 @@ class Main extends React.Component {
     const cards = data.map((item) => {
       return (
         <Card
+          key={item.id}
           name={item.name}
           photo={item.photo}
           id={item.id}
@@ -17,7 +18,7 @@ class Main extends React.Component {
         />
       );
     });
-    return cards;
+    return <div className="main">{cards}</div>;
   }
 }
 export default Main;
