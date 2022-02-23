@@ -11,7 +11,7 @@ class Main extends React.Component {
           name={item.name}
           photo={item.photo}
           id={item.id}
-          handleClick={this.handleClick}
+          handleClick={this.props.handleClick}
         />
       );
     });
