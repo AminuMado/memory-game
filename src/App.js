@@ -8,12 +8,18 @@ class App extends React.Component {
     super(props);
     this.state = { characters: data };
   }
-
+  handleClick = (event) => {
+    console.log(event.target);
+    console.log(event.currentTarget.id);
+  };
   render() {
     return (
       <>
         <Header />
-        <Main characters={this.state.characters} />
+        <Main
+          characters={this.state.characters}
+          handleClick={this.handleClick}
+        />
         <Footer />
       </>
     );
