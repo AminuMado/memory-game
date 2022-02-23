@@ -9,8 +9,20 @@ class App extends React.Component {
     this.state = { characters: data };
   }
   handleClick = (event) => {
-    console.log(event.target);
-    console.log(event.currentTarget.id);
+    // This handleClick function gets the id of the element clicked the id is mapped automatically if you have an id property on a tag.
+    // saving the id as a const and then we try to match the id to the corresponding character with the same id in the saved state
+    // we change the characters clicked property to true, while leaving everthing else as is and save it to the clicked constant created
+    // we finally set the state with the new generated clicked constant
+    // we do all this using map method so as to not directly mutate state.
+
+    const id = event.currentTarget.id;
+    const clicked = this.state.characters.map((character) => {
+      if (id === character.id) {
+        return { ...character, clicked: true };
+      }
+      return character;
+    });
+    this.setState({ characters: clicked });
   };
   render() {
     return (
