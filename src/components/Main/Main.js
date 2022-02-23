@@ -1,13 +1,10 @@
 import React from "react";
+import "./Main.css";
 import Card from "../Utils/Card/Card";
-import data from "../Utils/data";
 
 class Main extends React.Component {
-  handleClick = (event) => {
-    console.log(event.target);
-  };
   render() {
-    const cards = data.map((item) => {
+    const cards = this.props.characters.map((item) => {
       return (
         <Card
           key={item.id}
