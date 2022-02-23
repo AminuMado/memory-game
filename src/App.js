@@ -6,7 +6,7 @@ import data from "./components/Utils/data";
 class App extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { characters: data, count: 0 };
+    this.state = { characters: data, score: 0, hiScore: 0 };
   }
   handleClick = (event) => {
     // This handleClick function gets the id of the element clicked the id is mapped automatically if you have an id property on a tag.
@@ -27,7 +27,7 @@ class App extends React.Component {
   render() {
     return (
       <>
-        <Header count={this.state.count} />
+        <Header score={this.state.score} hiScore={this.state.hiScore} />
         <Main
           characters={this.state.characters}
           handleClick={this.handleClick}
