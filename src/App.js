@@ -7,14 +7,13 @@ class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = { characters: data };
-    console.log(this.state);
   }
 
   render() {
     return (
       <>
         <Header />
-        <Main />
+        <Main characters={this.state.characters} />
         <Footer />
       </>
     );
