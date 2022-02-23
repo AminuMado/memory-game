@@ -35,8 +35,9 @@ class App extends React.Component {
     this.setState({ characters: clicked });
   };
   componentDidUpdate(prevProps, prevState) {
-    console.log(prevState);
-    //Typical usage, don't forget to compare the props
+    //This is used since we wanna update the score anytime the clicked variable changes to true in the charactes state property
+    // The change is asynchonous so we cant have this in the handleclick function as it wont properly update
+    // this function only fires when the state changes, we use a comparision to make sure thats the case
     if (this.state.characters !== prevState.characters) {
       this.updateScore();
     }
