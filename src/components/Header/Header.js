@@ -9,8 +9,8 @@ class Header extends React.Component {
           <h4>Memory Game</h4>
         </div>
         <div className="score-board">
-          <p className="score">Score:6</p>
-          <p className="hi-score">Hi-Score:12</p>
+          <p className="score">Score:{this.props.score}</p>
+          <p className="hi-score">Hi-Score:{this.props.hiScore}</p>
         </div>
       </div>
     );
