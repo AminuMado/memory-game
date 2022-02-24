@@ -17,6 +17,16 @@ class Main extends React.Component {
     });
     return (
       <div className="main">
+        <div className="results-page">
+          <div className="overlay-result active">
+            <div className="result-page active">
+              <p className="result-message-1">You Lose</p>
+              <button type="button" className="play-again">
+                Play Again
+              </button>
+            </div>
+          </div>
+        </div>
         <div className="cards-container">{cards}</div>
       </div>
     );
