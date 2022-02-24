@@ -47,12 +47,21 @@ class App extends React.Component {
   playAgain = () => {
     this.setState({ characters: data, score: 0, gameOver: false });
   };
+  isGameOver = () => {
+    //This function checks if all the characters have been clicked
+    if (this.state.score > data.length - 1) {
+      this.setState({ gameOver: true });
+    }
+  };
   componentDidUpdate(prevProps, prevState) {
     //This is used since we wanna update the score anytime the clicked variable changes to true in the charactes state property
     // The change is asynchonous so we cant have this in the handleclick function as it wont properly update
     // this function only fires when the state changes, we use a comparision to make sure thats the case
     if (this.state.characters !== prevState.characters) {
       this.updateScore();
+    }
+    if (this.state.score !== prevState.score) {
+      this.isGameOver();
     }
   }
 
