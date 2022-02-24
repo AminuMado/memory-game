@@ -6,7 +6,7 @@ import data from "./components/Utils/data";
 class App extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { characters: data, score: 0, hiScore: 0 };
+    this.state = { characters: data, score: 0, hiScore: 0, gameOver: false };
   }
   updateScore = () => {
     // This function counts the number of trues in the cliked property of each character and adds it to the newScore variable delcalred below
