@@ -30,7 +30,7 @@ class Main extends React.Component {
               <button
                 type="button"
                 className="play-again"
-                onClick={(event) => console.log("ck")}
+                onClick={() => this.props.playAgain()}
               >
                 Play Again
               </button>
