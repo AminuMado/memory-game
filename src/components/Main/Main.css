@@ -25,6 +25,7 @@
   pointer-events: all;
 }
 .result-page {
+  font-family: "Nosifer", cursive;
   display: flex;
   flex-direction: column;
   align-items: center;
