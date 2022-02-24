@@ -6,16 +6,23 @@ import data from "./components/Utils/data";
 class App extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { characters: data, score: 0, hiScore: 0 };
+    this.state = { characters: data, score: 0, hiScore: 5 };
   }
   updateScore = () => {
+    // This function counts the number of trues in the cliked property of each character and adds it to the newScore variable delcalred below
+    // After wards it sets the score state to the current score
+    // Furthermore it makes a check if the current score is higher the hiscore the highscore should be updated also
     let newScore = 0;
     const count = this.state.characters.map((character) => {
       if (character.clicked) {
         newScore++;
-        this.setState({ score: newScore });
       } else return;
     });
+
+    if (newScore > this.state.hiScore) {
+      this.setState({ hiScore: newScore });
+    }
+    this.setState({ score: newScore });
   };
 
   handleClick = (event) => {
