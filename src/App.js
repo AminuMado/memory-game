@@ -53,6 +53,18 @@ class App extends React.Component {
       this.setState({ gameOver: true });
     }
   };
+  shuffleArray = (array) => {
+    /* Randomize array in-place using Durstenfeld shuffle algorithm */
+    const newArray = array.slice(0);
+    for (let i = newArray.length - 1; i > 0; i--) {
+      let j = Math.floor(Math.random() * (i + 1));
+      let temp = newArray[i];
+      newArray[i] = newArray[j];
+      newArray[j] = temp;
+    }
+    this.setState({ characters: newArray });
+  };
+
   componentDidUpdate(prevProps, prevState) {
     //This is used since we wanna update the score anytime the clicked variable changes to true in the charactes state property
     // The change is asynchonous so we cant have this in the handleclick function as it wont properly update
@@ -62,6 +74,7 @@ class App extends React.Component {
     }
     if (this.state.score !== prevState.score) {
       this.isGameOver();
+      this.shuffleArray(this.state.characters);
     }
   }
 
