@@ -12,7 +12,6 @@ class Card extends React.Component {
         }}
       >
         <img src={this.props.photo}></img>
-        <p>{this.props.name}</p>
       </div>
     );
   }
