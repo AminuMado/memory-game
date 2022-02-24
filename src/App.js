@@ -60,6 +60,7 @@ class App extends React.Component {
           characters={this.state.characters}
           handleClick={this.handleClick}
           gameOver={this.state.gameOver}
+          score={this.state.score}
         />
         <Footer />
       </>
