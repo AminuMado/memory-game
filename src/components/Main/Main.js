@@ -15,7 +15,11 @@ class Main extends React.Component {
         />
       );
     });
-    return <div className="main">{cards}</div>;
+    return (
+      <div className="main">
+        <div className="cards-container">{cards}</div>
+      </div>
+    );
   }
 }
 export default Main;
