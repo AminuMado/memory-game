@@ -35,6 +35,9 @@ class App extends React.Component {
     const id = event.currentTarget.id;
     const clicked = this.state.characters.map((character) => {
       if (id === character.id) {
+        if (character.clicked) {
+          this.setState({ gameOver: true });
+        } // This line checks if you have already clicked a character and sets the gameover state variable to true
         return { ...character, clicked: true };
       }
       return character;
@@ -56,6 +59,7 @@ class App extends React.Component {
         <Main
           characters={this.state.characters}
           handleClick={this.handleClick}
+          gameOver={this.state.gameOver}
         />
         <Footer />
       </>
