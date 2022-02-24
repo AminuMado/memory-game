@@ -44,6 +44,9 @@ class App extends React.Component {
     });
     this.setState({ characters: clicked });
   };
+  playAgain = () => {
+    this.setState({ characters: data, score: 0, gameOver: false });
+  };
   componentDidUpdate(prevProps, prevState) {
     //This is used since we wanna update the score anytime the clicked variable changes to true in the charactes state property
     // The change is asynchonous so we cant have this in the handleclick function as it wont properly update
@@ -52,6 +55,7 @@ class App extends React.Component {
       this.updateScore();
     }
   }
+
   render() {
     return (
       <>
@@ -61,6 +65,7 @@ class App extends React.Component {
           handleClick={this.handleClick}
           gameOver={this.state.gameOver}
           score={this.state.score}
+          playAgain={this.playAgain}
         />
         <Footer />
       </>
