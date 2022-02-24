@@ -4,6 +4,8 @@ import Card from "../Utils/Card/Card";
 
 class Main extends React.Component {
   render() {
+    const score = this.props.score;
+    const gameOver = this.props.gameOver;
     const cards = this.props.characters.map((item) => {
       return (
         <Card
@@ -17,11 +19,19 @@ class Main extends React.Component {
     });
     return (
       <div className="main">
-        <div className="results-page">
-          <div className="overlay-result active">
-            <div className="result-page active">
-              <p className="result-message-1">You Lose</p>
-              <button type="button" className="play-again">
+        <div className={gameOver ? "results-page active" : "results-page"}>
+          <div
+            className={gameOver ? "overlay-result active" : "overlay-result"}
+          >
+            <div className={gameOver ? "result-page active" : "result-page"}>
+              <p className="result-message-1">
+                {score > 11 ? "You Win" : "You Lose"}
+              </p>
+              <button
+                type="button"
+                className="play-again"
+                onClick={(event) => console.log("ck")}
+              >
                 Play Again
               </button>
             </div>
